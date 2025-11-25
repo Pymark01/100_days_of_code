@@ -1,0 +1,21 @@
+What are the different states?
+
+1. AP > 0 the player can move around, actions cost AP. scoreboard is updated
+2. AP == 0 the player can not move around and the scoreboard displays the question, "for next turn press 'enter' "
+3. AP == 0 and the player pressed 'enter'. the AP-count is reset. and the player can move around again.
+
+Flags:
+game_is_on: True as long the game runs
+next_turn:  For checking if the next turn should start. needs AP == 0 and Return key to be pressed to be True
+waiting_for_next_turn: True as long the Enter key has not been pressed and AP == 0
+
+
+WHILE game_is_on:
+    IF waiting_for_next_turn IS False (PLAYING_STATE):
+        - Process movement (cost AP)
+        - If AP reaches 0, set waiting_for_next_turn = True
+
+    IF waiting_for_next_turn IS True (WAITING_STATE):
+        - Ignore all movement
+        - Display "Press Enter"
+        - If Enter pressed: set waiting_for_next_turn = False, reset AP to 50

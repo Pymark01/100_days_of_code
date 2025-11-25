@@ -1,0 +1,6 @@
+Each soldier method has a certain amount of AP. f.e. turning is 1 AP and moving forward is 5. how to keep track of this.
+Build a scoreboard method
+have a designated key for ending the turn, "enter"
+make the soldier turtle a triangle
+Also have the scoreboard display the end of turn. and the question to press the "return"
+move the game logic flags and states into a different class
